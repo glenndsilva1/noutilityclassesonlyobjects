@@ -25,3 +25,12 @@ solution:
 Its better to create a new class with proper naming e.g EmailValidator, EmailFormatter, EmailCreator, EmailSendor etc etc
 
 It is better to create separate Utils class for distinct behaviour instead of Single Utils class e.g TextUtils, ViewUtils, ArrayUtils
+
+Problem when using Utility Classes
+Tight Coupling
+The main problem is that a class depending on a static method from a Utility Class has tight coupling. You are using a specific external dependency, not an abstraction. There is no way to switch that dependency under various circumstances. Usually, you would be able to provide a subclass of that dependency instead or another dependency implementing the interface. You lose that flexibility completely.
+
+Single Responsibility
+A class using Utility Class is responsible not only for its original role, but also for obtaining its dependencies. 
+Another problem is that existing Utility Classes have tendencies to rot. Usually, such classes are created from a code, which has no better or proper place to be. 
+Over time, if you are not very strict, these classes tend to accumulate more and more code, which may be not so related to the original methods. The class would lose its original single responsibility and become a jack-of-all-trades. Known as God Class.
