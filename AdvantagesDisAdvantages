@@ -34,3 +34,8 @@ Single Responsibility
 A class using Utility Class is responsible not only for its original role, but also for obtaining its dependencies. 
 Another problem is that existing Utility Classes have tendencies to rot. Usually, such classes are created from a code, which has no better or proper place to be. 
 Over time, if you are not very strict, these classes tend to accumulate more and more code, which may be not so related to the original methods. The class would lose its original single responsibility and become a jack-of-all-trades. Known as God Class.
+
+https://dogan-ucar.de/static-source-code-why-you-should-avoid-it/
+
+Last but not the least there is high possibility of code duplication as there could be same static behaviour spread across entire code base as developers find a easy way out to just create it and polute the entire code base as most 
+of the developers are lazy and do not have time to check the code base due to limited knowledge of the project.
