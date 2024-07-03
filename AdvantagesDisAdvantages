@@ -1,0 +1,27 @@
+Advantages of Utils class:
+The Utils class provides advantages to reuse the code.
+
+Disadvantages of Utils class:
+There is possibility of breaking SOLID principle unless considered properly.
+Static method stays in memory for longer duration
+What is the most significant problem of introducing Utils class?
+I have seen several projects where :
+
+A typical Utils class contains 4000+ lines of code.
+Atleast 1/3rd of total code are utils classes.
+A single utils class does multiple types of operations e.g Text related operation, View related operation, Temporary storage, File read/write operation etc etc..
+In most if utils classes at least 2/3rd of code is never re-used
+What is the root cause of such problem and how to solve?
+Reason-1. We have assumed the code may be re-used in several places in future, But the future never came, and we never checked our code in future
+
+solution:
+
+First create instance of a class and use it. Dont mark the code as utils unless it is used in several places. Have a look on your previous code on regular interval. At-least once a month, go though your previous code base and analyse how we can make this better
+
+Reason-2. We want to write a code, but we don’t know where to write. Most of developers in such cases creates a Utils class or adds to the existing Utils class.
+
+solution:
+
+Its better to create a new class with proper naming e.g EmailValidator, EmailFormatter, EmailCreator, EmailSendor etc etc
+
+It is better to create separate Utils class for distinct behaviour instead of Single Utils class e.g TextUtils, ViewUtils, ArrayUtils
